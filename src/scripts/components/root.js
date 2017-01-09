@@ -1,11 +1,19 @@
+var Header = require('./header.js');
+var Content = require('./content.js');
+var Footer = require('./footer.js');
+
+
+
 var Root = React.createClass({
   render:function(){
     return(
-      <div>
-        <div className="header"></div>
-        <div className="content"></div>
-        <div className="footer"></div>
+      <div className="root">
+        <Header />
+        <Content />
+        <Footer />
       </div>
     )
   }
 })
+
+ReactDOM.render(<Root />,document.getElementById('app'));
