@@ -1,0 +1,22 @@
+{
+  "name": "reactjs",
+  "version": "1.0.0",
+  "description": "react练习demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Apondon/reactjs.git"
+  },
+  "author": "Y",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Apondon/reactjs/issues"
+  },
+  "homepage": "https://github.com/Apondon/reactjs#readme",
+  "devDependencies": {
+    "webpack": "^1.14.0"
+  }
+}
