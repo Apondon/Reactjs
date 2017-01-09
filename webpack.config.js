@@ -8,6 +8,21 @@ module.exports = {
 
 	devtool:'source-map',
 
+	devServer:{
+		contentBase:__dirname + '/prd',
+		port:80,
+		host:'localhost',
+		inline:true,
+		// proxy:{
+		// 	'/api':{
+		// 		target:'http://localhost:3000',
+		// 		pathRewrite:{
+		// 			'^/api':''
+		// 		}
+		//
+		// 	}
+		// }
+	},
 	// module:{
 	// 	loaders:[
 	// 		{
