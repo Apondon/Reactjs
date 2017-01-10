@@ -1,6 +1,6 @@
-var Header = require('./header.js');
-var Content = require('./content.js');
-var Footer = require('./footer.js');
+var Header = require('./header');
+var Content = require('./content');
+var Footer = require('./footer');
 
 
 

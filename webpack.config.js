@@ -13,7 +13,7 @@ module.exports = {
 
 	devServer:{
 		contentBase:__dirname + '/prd',
-		port:80,
+		port:7777,
 		host:'localhost',
 		inline:true,
 		// proxy:{
@@ -40,20 +40,14 @@ module.exports = {
 
 			{
 				test:/\.scss$/,
-				// loader:'style!css!sass-loader'
 				loader:ET.extract('style-loader','css!sass')
 			}
 
-			// {
-			// 	test:/\.string$/,
-			// 	loader:'string'
-			// },
-			//
 		]
 	},
 
 	plugins: [
-		// new webpack.optimize.UglifyJsPlugin(),
+		//new webpack.optimize.UglifyJsPlugin(),
 		new ET('bundle.css')
 
 	]
