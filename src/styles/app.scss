@@ -1,8 +1,9 @@
 @charset "UTF-8";
 
-@import "./core/reset";
-@import "./core/index";
-@import "./module/header";
-@import "./module/content";
+@import "./usage/core/reset";
 
-@import "./module/footer";
+// module
+@import "./usage/module/index";
+@import "./usage/module/header";
+@import "./usage/module/content";
+@import "./usage/module/footer";
