@@ -6,15 +6,15 @@ var Footer = React.createClass({
       "res":[
         {
           "title":"推荐",
-          "icon":"&#xe60c;"
+          "icon":"\ue60c"
         },
         {
           "title":"爱VR",
-          "icon":"&#xe7b1;"
+          "icon":"\ue7b1"
         },
         {
           "title":"我的",
-          "icon":"&#xe62f;"
+          "icon":"\ue62f"
         }
       ]
     }
@@ -23,7 +23,6 @@ var Footer = React.createClass({
     var arrFooter = [];
     var result = this.state.res;
     var rlen = result.length;
-    console.log(result);
     for(var i = 0;i < rlen;i++){
       arrFooter.push(<FooterBox FooterTip={result[i]}/>)
     }
@@ -38,7 +37,6 @@ var Footer = React.createClass({
 
 var FooterBox = React.createClass({
   render:function(){
-    console.log(this.props);
     return(
       <div>
         <span className="yo-ico">{this.props.FooterTip.icon}</span>

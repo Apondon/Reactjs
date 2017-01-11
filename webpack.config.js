@@ -41,8 +41,12 @@ module.exports = {
 			{
 				test:/\.scss$/,
 				loader:ET.extract('style-loader','css!sass')
-			}
+			},
 
+			{
+				test:/\.(eot|woff|svg|ttf|woff2|gif|appcache)(\?|$)/,
+				loader:'file-loader?name=[name].[ext]'
+			}
 		]
 	},
 
