@@ -8,8 +8,10 @@ var Root = React.createClass({
   render:function(){
     return(
       <div className="root">
-        <Header />
-        <Content />
+        <div className="router" id="router">
+          <Header />
+          <Content />
+        </div>
         <Footer />
       </div>
     )
