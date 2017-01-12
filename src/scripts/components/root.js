@@ -1,6 +1,6 @@
 var Header = require('./header');
 var Content = require('./content');
-var Footer = require('./footer.js');
+var Footer = require('./footer');
 
 
 
@@ -9,8 +9,8 @@ var Root = React.createClass({
     return(
       <div className="root">
         <div className="router" id="router">
-          <Header />
-          <Content />
+          <div id="header"></div>
+          <div id="content"></div>
         </div>
         <Footer />
       </div>
@@ -19,3 +19,5 @@ var Root = React.createClass({
 })
 
 ReactDOM.render(<Root />,document.getElementById('app'));
+ReactDOM.render(<Header />,document.getElementById("header"));
+ReactDOM.render(<Content />,document.getElementById('content'));

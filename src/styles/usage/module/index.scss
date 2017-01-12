@@ -11,6 +11,12 @@
       @include flexbox();
       @include flex-direction(column);
       width: 100%;
+      #content{
+        @include flex();
+        @include flexbox();
+        @include flex-direction(column);
+        width: 100%;
+      }
     }
   }
 }
