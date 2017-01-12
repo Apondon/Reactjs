@@ -29,7 +29,7 @@ var Router = (function(){
 		"/user" : {
 			"unmount" : ["header","content"],
 			"onmount" : {
-				"content" : "./content"
+				"content" : "./user"
 			}
 		}
 	}
