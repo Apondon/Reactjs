@@ -1,3 +1,5 @@
+var Banner = require('./banner');
+
 var Content = React.createClass({
   getDefaultProps:function(){
     return{
@@ -19,22 +21,25 @@ var Content = React.createClass({
 					"bannerImg" : res
 				})
     })
-    .catch(e => console.log("first, error", e));
+    .catch(e => console.log("banner, error", e));
     fetch(this.props.listUrl).then(response => response.json())
     .then(res => {
         This.setState({
 					"list" : res
 				})
     })
-    .catch(e => console.log("first, error", e));
+    .catch(e => console.log("list, error", e));
   },
   render:function(){
     var arrBanner = [];
 		var bannerImg = this.state.bannerImg;
 		if(bannerImg){
       var lenB = bannerImg.length;
-			for( var i = 0;i < lenB;i ++ ){
-				arrBanner.push( <div className="swiper-slide"><img src={bannerImg[i].img}/></div>)
+			// for( var i = 0;i < lenB;i ++ ){
+			// 	arrBanner.push( <div className="swiper-slide"><img src={bannerImg[i].img}/></div>)
+			// }
+      for( var i = 0;i < lenB;i ++ ){
+				arrBanner.push( <Banner name={bannerImg[i]} /> )
 			}
 		}
     var arrlist = [];
@@ -92,10 +97,13 @@ var Content = React.createClass({
     )
   },
   componentDidMount:function(){
-    swiperOne = new Swiper('.swiper-container', {
-                      pagination: '.swiper-pagination',
-                      autoplay : 2000
-                   });
+    setTimeout(function(){
+      swiperOne = new Swiper('.swiper-container', {
+              pagination: '.swiper-pagination',
+              autoplay : 2000
+           });
+    },100)
+
   }
 })
 
