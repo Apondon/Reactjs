@@ -1,15 +1,16 @@
 var Videoheader = React.createClass({
   render:function(){
     return(
-      <div className="VideoHeader">
-        <div>
+      <div>
+        <div className="VideoHeader">
           <span></span>
           <span></span>
           <span></span>
           <span></span>
           <span></span>
+          <span className="yo-ico">&#xe672;</span>
         </div>
-        <span className="yo-ico">&#xe672;</span>
+        <div></div>
       </div>
     )
   }

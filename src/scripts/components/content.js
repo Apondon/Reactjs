@@ -20,7 +20,13 @@ var Content = React.createClass({
 				})
     })
     .catch(e => console.log("first, error", e));
-
+    fetch(this.props.listUrl).then(response => response.json())
+    .then(res => {
+        This.setState({
+					"list" : res
+				})
+    })
+    .catch(e => console.log("first, error", e));
   },
   render:function(){
     var arrBanner = [];
@@ -31,6 +37,14 @@ var Content = React.createClass({
 				arrBanner.push( <div className="swiper-slide"><img src={bannerImg[i].img}/></div>)
 			}
 		}
+    var arrlist = [];
+    var listItem = this.state.list;
+    if(listItem){
+      var lenL = listItem.length;
+      for(var i = 0;i < lenL;i++){
+        arrlist.push(<div><img src={listItem[i].img} /><p>{listItem[i].tit}</p></div>)
+      }
+    }
     return(
       <div className="content">
         <div className="bannerBox">
@@ -42,17 +56,45 @@ var Content = React.createClass({
           </div>
         </div>
         <div className="indexBox">
-          this is list
+          <div className="indexlist">
+            <p className="indexTit">影视剧</p>
+            <div className="indexWarp">
+              {arrlist}
+            </div>
+          </div>
+          <div className="indexlist">
+            <p className="indexTit">演唱会</p>
+            <div className="indexWarp">
+              {arrlist}
+            </div>
+          </div>
+          <div className="indexlist">
+            <p className="indexTit">麦互动</p>
+            <div className="indexWarp">
+              {arrlist}
+            </div>
+          </div>
+          <div className="indexlist">
+            <p className="indexTit">舞台剧</p>
+            <div className="indexWarp">
+              {arrlist}
+            </div>
+          </div>
+          <div className="indexlist">
+            <p className="indexTit">麦资讯</p>
+            <div className="indexWarp">
+              {arrlist}
+            </div>
+          </div>
         </div>
       </div>
 
     )
   },
   componentDidMount:function(){
-    console.log(document.getElementsByClassName('swiper-pagination'))
     swiperOne = new Swiper('.swiper-container', {
                       pagination: '.swiper-pagination',
-                      autoplay : 2000,
+                      autoplay : 2000
                    });
   }
 })
