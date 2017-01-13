@@ -1,6 +1,4 @@
-var React = require('react');
-
-var VideoHeader = React.createClass({
+var Videoheader = React.createClass({
   render:function(){
     return(
       <div className="VideoHeader">
@@ -17,4 +15,4 @@ var VideoHeader = React.createClass({
   }
 })
 
-module.exports = VideoHeader;
+module.exports = Videoheader;

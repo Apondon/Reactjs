@@ -1,5 +1,3 @@
-var React = require('react');
-
 var User = React.createClass({
   getInitialState:function(){
     return {

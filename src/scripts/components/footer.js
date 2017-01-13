@@ -1,4 +1,3 @@
-var React = require('react');
 var Router = require('./router');
 
 var Footer = React.createClass({

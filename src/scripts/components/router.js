@@ -23,7 +23,7 @@ var Router = (function(){
 		"/video" : {
 			"unmount" : ["header","content"],
 			"onmount" : {
-				"header" : "./header"
+				"header" : "./videoheader"
 			}
 		},
 		"/user" : {
@@ -33,10 +33,11 @@ var Router = (function(){
 			}
 		}
 	}
+	var prev = "/index"
 	var route = function(ev){
 		var _href = ev.target.parentNode.getAttribute("href");
-		for( var attr in map_key ){
-			if( _href == attr ){
+		for( var attr in map_key){
+			if( _href == attr && _href != prev){
 				//卸载组件
 				var mount = map_key[attr];
 				var unmount = mount.unmount;
@@ -44,6 +45,8 @@ var Router = (function(){
 				//拉入组件
 				var onmount = mount.onmount;
 				onCompMount( onmount )
+
+				prev = _href;
 			}
 		}
 	}

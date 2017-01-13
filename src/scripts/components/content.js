@@ -1,9 +1,13 @@
-var React = require('react');
-
 var Content = React.createClass({
   render:function(){
     return(
-      <div className="content">this is content</div>
+      <div className="content">
+        <div className="bannerBox">this is content</div>
+        <div className="indexBox">
+          this is list
+        </div>
+      </div>
+
     )
   }
 })
