@@ -1,6 +1,8 @@
 var Videoheader = React.createClass({
   render:function(){
+    console.log(this.props.target);
     return(
+
         <div className="VideoHeader">
           <span className="active">麦影视</span>
           <span>演唱会</span>
@@ -13,8 +15,8 @@ var Videoheader = React.createClass({
   },
   componentDidMount:function(){
     $('.VideoHeader span').on('click',function(){
-      //console.log($(this).index());
       $(this).addClass('active').siblings().removeClass('active');
+      console.log($(this).index());
     })
   }
 })
