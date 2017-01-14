@@ -1,0 +1,23 @@
+.VideoHeader{
+  height: .44rem;
+  width: 100%;
+  background-color: #fe5c4d;
+  @include flexbox();
+  span{
+    @include flex();
+    line-height: .44rem;
+    text-align: center;
+    color: #fff;
+    &.active{
+      border-bottom:2px solid #fff;
+    }
+  }
+  .yo-ico{
+    width: .44rem;
+    height: .44rem;
+    line-height: .44rem;
+    text-align: center;
+    color:#fff;
+    font-size: .18rem;
+  }
+}

@@ -1,18 +1,21 @@
 var Videoheader = React.createClass({
   render:function(){
     return(
-      <div>
         <div className="VideoHeader">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span className="yo-ico">&#xe672;</span>
+          <span className="active">麦影视</span>
+          <span>演唱会</span>
+          <span>舞台剧</span>
+          <span>麦互动</span>
+          <span>麦资讯</span>
+          <i className="yo-ico">&#xe672;</i>
         </div>
-        <div></div>
-      </div>
     )
+  },
+  componentDidMount:function(){
+    $('.VideoHeader span').on('click',function(){
+      //console.log($(this).index());
+      $(this).addClass('active').siblings().removeClass('active');
+    })
   }
 })
 

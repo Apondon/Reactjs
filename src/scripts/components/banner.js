@@ -10,7 +10,8 @@ var Banner = React.createClass({
   componentDidMount:function(){
     swiperOne = new Swiper('.swiper-container', {
             pagination: '.swiper-pagination',
-            autoplay : 2000
+            autoplay : 2000,
+            autoplayDisableOnInteraction : true
          });
   }
 });

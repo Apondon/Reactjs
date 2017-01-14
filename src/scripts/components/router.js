@@ -23,7 +23,7 @@ var Router = (function(){
 		"/video" : {
 			"unmount" : ["header","content"],
 			"onmount" : {
-				"header" : "./videoheader"
+				"content" : "./videoheader"
 			}
 		},
 		"/user" : {
