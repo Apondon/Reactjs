@@ -1,4 +1,4 @@
-var ChangeTab = require('./changetab');
+// var ChangeTab = require('./changetab');
 var VideoContent = React.createClass({
   getDefaultProps:function(){
     return{
@@ -7,7 +7,8 @@ var VideoContent = React.createClass({
   },
   getInitialState:function(){
     return {
-      "videolist" : ""
+      "videolist" : "",
+      swiperTwo:""
     }
   },
   componentWillMount:function(){
@@ -34,22 +35,24 @@ var VideoContent = React.createClass({
       <div className="videocontent">
         <div className="swiper-container" id="video-swiper">
           <div className="swiper-wrapper">
-            <div className="swiper-slide" id="video-scroll">
+            <div className="swiper-slide swiper-no-swiping" id="video-scroll">
               <div className="scroll-container">
                 {arrList}
               </div>
             </div>
-            <div className="swiper-slide">演唱会</div>
-            <div className="swiper-slide">舞台剧</div>
-            <div className="swiper-slide">麦互动</div>
-            <div className="swiper-slide">麦资讯</div>
+            <div className="swiper-slide swiper-no-swiping">演唱会</div>
+            <div className="swiper-slide swiper-no-swiping">舞台剧</div>
+            <div className="swiper-slide swiper-no-swiping">麦互动</div>
+            <div className="swiper-slide swiper-no-swiping">麦资讯</div>
           </div>
         </div>
       </div>
     )
   },
   componentDidMount:function(){
-    swiperTwo = new Swiper('#video-swiper', {
+    var that = this;
+    this.swiperTwo = new Swiper('#video-swiper', {
+      noSwiping : true,
       onSlideChangeEnd:function(swiper){
         console.log(swiper.activeIndex);
       }
@@ -57,6 +60,13 @@ var VideoContent = React.createClass({
     myScroll = new IScroll("#video-scroll",{
 
     })
+  },
+  shouldComponentUpdate:function(){
+    return true
+  },
+  componentDidUpdate:function(){
+    console.log( this.props.name );
+    this.swiperTwo.slideTo(this.props.name);
   }
 })
 module.exports = VideoContent;

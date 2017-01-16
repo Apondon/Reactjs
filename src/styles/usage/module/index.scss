@@ -16,6 +16,12 @@
         @include flexbox();
         @include flex-direction(column);
         width: 100%;
+        .vCont{
+          @include flex();
+          @include flexbox();
+          @include flex-direction(column);
+          width: 100%;
+        }
       }
     }
   }
