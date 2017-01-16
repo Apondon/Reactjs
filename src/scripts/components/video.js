@@ -1,5 +1,5 @@
 var Videoheader = require('./videoheader');
-var VideoContent = require('./Videocontent');
+var VideoContent = require('./videocontent');
 
 var VideoRoot = React.createClass({
   getDefaultProps:function(){
