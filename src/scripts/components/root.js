@@ -4,11 +4,7 @@ var Footer = require('./footer');
 
 
 var Root = React.createClass({
-  getInitialState:function(){
-    return{
-      target : 0
-    }
-  },
+
 
   render:function(){
     return(
